@@ -1,6 +1,6 @@
 # vora-test
 
-Clean full-stack JS boilerplate (Express + SQLite + vanilla HTML/JS) used as a target for a security-scanning application. The initial code is intentionally non-vulnerable; specific bug classes will be planted in a follow-up step.
+A clean full-stack JS boilerplate (Express + SQLite + vanilla HTML/JS) used as a target for a security-scanning application. The initial code is intentionally non-vulnerable; specific bug classes will be planted in a follow-up step.
 
 ## Quick start
 
