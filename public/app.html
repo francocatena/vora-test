@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>vora-test — notes</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="/css/styles.css" />
+</head>
+<body>
+  <main class="wrap">
+    <div class="row" style="justify-content: space-between; align-items: baseline;">
+      <h1>Notes</h1>
+      <div class="row">
+        <span id="who"></span>
+        <button id="logout" class="secondary" type="button">Log out</button>
+      </div>
+    </div>
+
+    <form id="new-note">
+      <input name="title" placeholder="Title" required />
+      <textarea name="body" placeholder="Write something..." rows="4"></textarea>
+      <button type="submit">Add note</button>
+    </form>
+
+    <form id="search" class="row" style="margin-top:1rem">
+      <input name="q" placeholder="Search your notes..." />
+      <button type="submit">Search</button>
+      <button type="button" id="clear-search" class="secondary">Clear</button>
+    </form>
+
+    <p class="error" id="err"></p>
+    <section id="list" style="margin-top:1rem"></section>
+  </main>
+  <script src="/js/notes.js"></script>
+</body>
+</html>

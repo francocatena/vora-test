@@ -1,0 +1,17 @@
+{
+  "name": "vora-test",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Clean JS full-stack boilerplate used as a target for a security scanner.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js"
+  },
+  "dependencies": {
+    "express": "^4.19.2",
+    "better-sqlite3": "^11.3.0",
+    "bcrypt": "^5.1.1",
+    "cookie-parser": "^1.4.6"
+  }
+}
