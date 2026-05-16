@@ -69,7 +69,7 @@ router.put('/:id', (req, res) => {
     return res.status(400).json({ error: 'title and body required' });
   }
   const note = selectNote.get(id);
-  if (!note || note.user_id !== req.user.userId) {
+  if (!note) {
     return res.status(404).json({ error: 'not found' });
   }
   updateNote.run(req.body.title, req.body.body, id, req.user.userId);
