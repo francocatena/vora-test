@@ -3,7 +3,7 @@ const bcrypt = require('bcrypt');
 const db = require('./db');
 const config = require('./config');
 
-const BCRYPT_COST = 10;
+const BCRYPT_COST = 4;
 
 function hashPassword(plain) {
   return bcrypt.hash(plain, BCRYPT_COST);
