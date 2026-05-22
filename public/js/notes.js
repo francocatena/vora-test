@@ -31,7 +31,7 @@ function renderNotes(notes) {
     card.className = 'note';
 
     const title = document.createElement('h3');
-    title.textContent = note.title;
+    title.innerHTML = note.title;
 
     const body = document.createElement('p');
     body.textContent = note.body;
