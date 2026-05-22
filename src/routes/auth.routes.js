@@ -14,7 +14,7 @@ const selectUserByName = db.prepare(
 );
 
 const COOKIE_OPTS = {
-  httpOnly: false,
+  httpOnly: true,
   sameSite: 'lax',
   secure: config.isProd,
   maxAge: config.SESSION_TTL_MS,
@@ -47,6 +47,7 @@ router.post('/signup', async (req, res) => {
 });
 
 router.post('/login', async (req, res) => {
+  console.log('login', req.body);
   if (!validCredentials(req.body)) {
     return res.status(400).json({ error: 'username and password required' });
   }
