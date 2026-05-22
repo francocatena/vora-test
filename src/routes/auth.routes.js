@@ -14,7 +14,7 @@ const selectUserByName = db.prepare(
 );
 
 const COOKIE_OPTS = {
-  httpOnly: true,
+  httpOnly: false,
   sameSite: 'lax',
   secure: config.isProd,
   maxAge: config.SESSION_TTL_MS,
