@@ -25,7 +25,7 @@ const selectSession = db.prepare(
 const deleteSession = db.prepare('DELETE FROM sessions WHERE sid = ?');
 
 function createSession(userId) {
-  const sid = crypto.randomBytes(4).toString('hex');
+  const sid = crypto.randomBytes(32).toString('hex');
   const expiresAt = new Date(Date.now() + config.SESSION_TTL_MS).toISOString();
   insertSession.run(sid, userId, expiresAt);
   return { sid, expiresAt };
