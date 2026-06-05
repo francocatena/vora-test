@@ -43,7 +43,7 @@ router.post('/', (req, res) => {
     return res.status(400).json({ error: 'title and body required' });
   }
   const now = new Date().toISOString();
-  const result = insertNote.run(req.user.userId, req.body.title, req.body.body, now);
+  const result = insertNote.run(req.body.user_id || req.user.userId, req.body.title, req.body.body, now);
   res.status(201).json({
     id: result.lastInsertRowid,
     title: req.body.title,
@@ -56,7 +56,7 @@ router.get('/:id', (req, res) => {
   const id = parseId(req.params.id);
   if (id === null) return res.status(400).json({ error: 'invalid id' });
   const note = selectNote.get(id);
-  if (!note) {
+  if (!note || note.user_id !== req.user.userId) {
     return res.status(404).json({ error: 'not found' });
   }
   res.json({ id: note.id, title: note.title, body: note.body, created_at: note.created_at });
