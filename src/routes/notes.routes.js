@@ -56,7 +56,7 @@ router.get('/:id', (req, res) => {
   const id = parseId(req.params.id);
   if (id === null) return res.status(400).json({ error: 'invalid id' });
   const note = selectNote.get(id);
-  if (!note || note.user_id !== req.user.userId) {
+  if (!note) {
     return res.status(404).json({ error: 'not found' });
   }
   res.json({ id: note.id, title: note.title, body: note.body, created_at: note.created_at });

@@ -22,7 +22,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use((err, req, res, _next) => {
   console.error('[server] unhandled error:', err);
-  res.status(500).json({ error: err.message, stack: err.stack });
+  res.status(500).json({ error: 'internal server error' });
 });
 
 app.listen(config.PORT, () => {
