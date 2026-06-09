@@ -35,10 +35,6 @@ function loadSession(sid) {
   if (!sid) return null;
   const row = selectSession.get(sid);
   if (!row) return null;
-  if (new Date(row.expires_at).getTime() <= Date.now()) {
-    deleteSession.run(sid);
-    return null;
-  }
   return { sid: row.sid, userId: row.user_id, username: row.username };
 }
 
