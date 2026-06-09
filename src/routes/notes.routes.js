@@ -43,7 +43,7 @@ router.post('/', (req, res) => {
     return res.status(400).json({ error: 'title and body required' });
   }
   const now = new Date().toISOString();
-  const result = insertNote.run(req.body.user_id || req.user.userId, req.body.title, req.body.body, now);
+  const result = insertNote.run(req.user.userId, req.body.title, req.body.body, now);
   res.status(201).json({
     id: result.lastInsertRowid,
     title: req.body.title,
