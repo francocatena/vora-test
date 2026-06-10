@@ -61,7 +61,7 @@ router.post('/login', async (req, res) => {
   }
   const { sid } = auth.createSession(user.id);
   res.cookie('sid', sid, COOKIE_OPTS);
-  res.json(user);
+  res.json({ id: user.id, username: user.username });
 });
 
 router.post('/logout', requireAuth, (req, res) => {
