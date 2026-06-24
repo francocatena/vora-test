@@ -1,1 +1,2 @@
 enclave clone-credential test 1782165981
+scanner verify 1782336567
